@@ -5,7 +5,7 @@ describe 'Song Associations' do
     @song = Song.create(name: "Forever")
   end
 
-  it 'has a genre' do
+  xit 'has a genre' do
     genre = Genre.create(name: "Rock")
     @song.genre = genre
     @song.save
@@ -13,7 +13,7 @@ describe 'Song Associations' do
     expect(Song.find_by(name: "Forever").genre).to eq(genre)
   end
 
-  it 'can have an artist' do
+  xit 'can have an artist' do
     artist = Artist.create(name: "Prince")
     @song.artist = artist
     @song.save
@@ -21,14 +21,14 @@ describe 'Song Associations' do
     expect(Song.where(name: "Forever").first.artist).to eq(artist)
   end
 
-  it 'can be created with an artist as an attribute' do
+  xit 'can be created with an artist as an attribute' do
     artist = Artist.create(name: "The Beatles")
     song = Song.create(name: "Yellow Submarine", artist: artist)
 
     expect(Song.where(name: "Yellow Submarine").first.artist).to eq(artist)
   end
 
-  it 'can build genres' do
+  xit 'can build genres' do
     genre = @song.build_genre(name: "Rap")
     @song.save
 
